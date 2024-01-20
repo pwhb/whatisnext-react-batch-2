@@ -7,4 +7,4 @@
 - [x] Control Flow (if, switch, for, while)
 - [x] Truthy & Falsy
 - [x] DOM & HTML Events
-- [] ES6
+- [ ] ES6

@@ -2,6 +2,6 @@
 
 - Don't use `var`.
 
-- Use `let` only for primitives.
+- Use `const` whenever possible and `let` mostly for primitives.
 
-- Use arrow function for callback and anonymous function that returns a value.
+- Use arrow functions for callbacks and anonymous functions that returns a value.
