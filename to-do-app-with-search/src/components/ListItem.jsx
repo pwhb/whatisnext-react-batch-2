@@ -1,4 +1,4 @@
-function ListItem({ item, index, handleCheck, handleDelete }) 
+function ListItem({ item, id, handleCheck, handleDelete })
 {
     return <li>
         <span className={`card`} style={{
@@ -6,10 +6,10 @@ function ListItem({ item, index, handleCheck, handleDelete })
             backgroundColor: item.isFinished ? 'lightgreen' : 'orange',
             textDecoration: item.isFinished ? 'line-through' : 'none',
         }}>
-            <input name={index} type='checkbox' onChange={handleCheck} style={{ marginRight: '2rem' }} />
+            <input type='checkbox' onChange={() => handleCheck(id)} style={{ marginRight: '2rem' }} />
             {item.name}
         </span>
-        <button className='card' name={index} onClick={handleDelete}>Delete</button>
+        <button className='card' onClick={() => handleDelete(id)}>Delete</button>
     </li>;
 }
 
