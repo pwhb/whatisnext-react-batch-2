@@ -4,21 +4,27 @@ function ShopModal()
 {
     const shopItems = [
         {
-            image: "https://picsum.photos/200",
-            name: "Upgrade 1",
+            image: "/industrial-robot-robot-svgrepo-com.svg",
+            name: "Choco Bot",
             price: 100,
             quantity: 1
         },
         {
-            image: "https://picsum.photos/200",
-            name: "Upgrade 1",
+            image: "/loader-svgrepo-com.svg",
+            name: "Choco Loader",
+            price: 100,
+            quantity: 1
+        },
+        {
+            image: "/microchip-svgrepo-com.svg",
+            name: "Choco AI",
             price: 100,
             quantity: 1
         }
     ];
-    return <dialog id="my_modal_1" className="modal">
+    return <dialog id="shop-modal" className="modal">
         <div className="flex flex-col items-center modal-box">
-            <h3 className="text-lg font-bold">Upgrades</h3>
+            <h3 className="text-4xl font-medium wonka-font">Upgrades</h3>
             <ul className="w-full">
                 {shopItems.map((item) => <ShopItem {...item} />)}
             </ul>
@@ -34,7 +40,7 @@ function ShopModal()
 
 export function ShopButton()
 {
-    return <button className="p-2 w-16 h-16 bg-purple-200 btn btn-circle" onClick={() => document.getElementById('my_modal_1').showModal()}>
+    return <button className="p-2 w-16 h-16 btn btn-square" onClick={() => document.getElementById('shop-modal').showModal()}>
         <img src="/shopping-cart-svgrepo-com.svg" alt="buy" />
     </button>;
 }
