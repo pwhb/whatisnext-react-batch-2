@@ -34,7 +34,9 @@ function ShopModal()
 
 export function ShopButton()
 {
-    return <button className="btn" onClick={() => document.getElementById('my_modal_1').showModal()}>open modal</button>;
+    return <button className="p-2 w-16 h-16 bg-purple-200 btn btn-circle" onClick={() => document.getElementById('my_modal_1').showModal()}>
+        <img src="/shopping-cart-svgrepo-com.svg" alt="buy" />
+    </button>;
 }
 
 export default ShopModal;
