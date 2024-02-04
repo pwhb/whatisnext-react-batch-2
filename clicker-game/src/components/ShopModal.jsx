@@ -12,22 +12,37 @@ function ShopModal({ chocolates, setChocolatesPerSecond, setChocolatesPerClick, 
             image: "/loader-svgrepo-com.svg",
             name: "Choco Loader",
             price: prices[0],
+            description: "Adds 1 Chocolate Per Click",
             onBuy: function ()
             {
-                setChocolatesPerClick(v => v + 1);
-                setChocolates(chocolates - prices[0]);
-            }
+                if (chocolates >= prices[0])
+                {
+                    setChocolatesPerClick(v => v + 1);
+                    setChocolates(chocolates - prices[0]);
+                    const newPrices = [...prices];
+                    newPrices[0] *= 2;
+                    setPrices(newPrices);
+                }
+            },
+            isAvailable: chocolates >= prices[0]
         },
         {
             image: "/industrial-robot-robot-svgrepo-com.svg",
             name: "Choco Bot",
             price: prices[1],
-            quantity: 1,
+            description: "Adds 1 Chocolate Per Second",
             onBuy: function ()
             {
-                setChocolatesPerSecond(v => v + 1);
-                setChocolates(chocolates - prices[1]);
-            }
+                if (chocolates >= prices[1])
+                {
+                    setChocolatesPerSecond(v => v + 1);
+                    setChocolates(chocolates - prices[1]);
+                    const newPrices = [...prices];
+                    newPrices[1] *= 2;
+                    setPrices(newPrices);
+                }
+            },
+            isAvailable: chocolates >= prices[1]
         },
     ];
     return <dialog id="shop-modal" className="modal">
